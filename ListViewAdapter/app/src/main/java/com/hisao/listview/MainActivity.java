@@ -18,18 +18,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ListView lstNames = (ListView) findViewById(R.id.lst_names);
         final List<String> namesList = new ArrayList<String>();
         namesList.add("Vinicius");
         namesList.add("Vanessa");
-        namesList.add("Valkiria");
-        namesList.add("Val");
+        namesList.add("Jessica");
+        namesList.add("Amanda");
+        namesList.add("Adriana");
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_list_item_1,
                 namesList );
 
+        ListView lstNames = (ListView) findViewById(R.id.lst_names);
         lstNames.setAdapter(arrayAdapter);
         lstNames.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

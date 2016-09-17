@@ -26,6 +26,7 @@ GreenFragment.OnFragmentInteractionListener, BlueFragment.OnFragmentInteractionL
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frg_red, GreenFragment.newInstance(null, null));
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
 
     }
@@ -35,6 +36,7 @@ GreenFragment.OnFragmentInteractionListener, BlueFragment.OnFragmentInteractionL
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frg_green, BlueFragment.newInstance(null, null));
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
 
     }

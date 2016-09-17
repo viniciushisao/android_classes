@@ -14,8 +14,8 @@ import java.util.ArrayList;
  */
 public class NumberAdapter extends BaseAdapter{
 
-    ArrayList<Integer> numbers;
-    Activity activity;
+    private ArrayList<Integer> numbers;
+    private Activity activity;
 
     public NumberAdapter(ArrayList<Integer> numbers, Activity activity){
         this.numbers = numbers;

@@ -13,8 +13,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ListView lstNumbers =(ListView)findViewById(R.id.lst_numbers);
-
         ArrayList<Integer> anyNumber = new ArrayList<>();
         anyNumber.add(2);
         anyNumber.add(24);
@@ -23,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         anyNumber.add(5);
         anyNumber.add(1);
 
+        ListView lstNumbers =(ListView)findViewById(R.id.lst_numbers);
         lstNumbers.setAdapter(new NumberAdapter(anyNumber, this));
     }
 }

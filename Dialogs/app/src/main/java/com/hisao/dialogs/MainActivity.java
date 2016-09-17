@@ -3,12 +3,14 @@ package com.hisao.dialogs;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
+import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.TimePicker;
 
 import java.util.Calendar;
 
@@ -19,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         Button btnAlert = (Button) findViewById(R.id.btn_alert);
         btnAlert.setOnClickListener(new View.OnClickListener() {
@@ -48,9 +49,10 @@ public class MainActivity extends AppCompatActivity {
         btnProgress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ProgressDialog.show(MainActivity.this, "Title",
-                        "Some message", true).setCancelable(true);
-
+                ProgressDialog progressDialog = ProgressDialog.show(MainActivity.this, "Title",
+                        "Some message", true);
+                progressDialog.setCancelable(true);
+                progressDialog.show();
             }
         });
 
@@ -73,11 +75,20 @@ public class MainActivity extends AppCompatActivity {
         btnTimePicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Calendar mcurrentTime = Calendar.getInstance();
+                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
+                int minute = mcurrentTime.get(Calendar.MINUTE);
+                TimePickerDialog mTimePicker;
+                mTimePicker = new TimePickerDialog(MainActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
 
+                    }
+                }, hour, minute, true);//Yes 24 hour time
+                mTimePicker.setTitle("Select Time");
+                mTimePicker.show();
             }
         });
-
-
     }
 
     class mDateSetListener implements DatePickerDialog.OnDateSetListener {
