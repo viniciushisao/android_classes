@@ -19,4 +19,4 @@ git clone https://github.com/viniciushisao/android_classes.git
  * Notifications (including toasts and alarms)
  * Localization
  * GoogleMaps
- 
+  
