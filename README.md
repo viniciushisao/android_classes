@@ -6,11 +6,17 @@ git clone https://github.com/viniciushisao/android_classes.git
 ```
 
 
-5. Lists and Threads
+5. Lists. Threads
   * Dialog
   * ListViewAdapter
   * Adapter
   * Thread
-6. Services, Intents and Broadcasts
+6. Services. Intents. Broadcasts
  * Services 
  * Intents
+ * For Broadcasts sample: Istheinterneton project
+7. Notifications, toasts and Alarms. Localization. Google maps
+ * Notifications (including toasts and alarms)
+ * Localization
+ * GoogleMaps
+ 
