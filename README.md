@@ -15,8 +15,8 @@ git clone https://github.com/viniciushisao/android_classes.git
  * Services 
  * Intents
  * For Broadcasts sample: Istheinterneton project
-7. Notifications, toasts and Alarms. Localization. Google maps
- * Notifications (including toasts and alarms)
- * Localization
+7. Notifications, toasts and Alarms. Location. Google maps
+ * Status bar (including toasts and alarms)
+ * Location
  * GoogleMaps (https://developers.google.com/maps/documentation/android-api/start)
   
