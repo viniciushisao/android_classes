@@ -4,19 +4,22 @@ Command to get the repository is:
 ```
 git clone https://github.com/viniciushisao/android_classes.git
 ```
-
-
-5. Lists. Threads
+.
+.
+.
+.
+. Lists. Threads
   * Dialog
   * ListViewAdapter
   * Adapter
   * Thread
-6. Services. Intents. Broadcasts
+. Services. Intents. Broadcasts
  * Services 
  * Intents
  * For Broadcasts sample: Istheinterneton project
-7. Notifications, toasts and Alarms. Location. Google maps
- * Status bar (including toasts and alarms)
+. Notifications, toasts and Alarms. Location. Google maps
+ * Toasts
+ * Status Bar (also alarms)
  * Location
  * GoogleMaps (https://developers.google.com/maps/documentation/android-api/start)
   

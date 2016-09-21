@@ -9,16 +9,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.app.NotificationCompat;
 import android.view.View;
 import android.widget.Button;
-
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
 public class MainActivity extends AppCompatActivity {
     NotificationCompat.Builder notification;
@@ -40,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 //Creating Notification Builder
                 notification = new NotificationCompat.Builder(MainActivity.this);
                 //Title for Notification
-                notification.setContentTitle("Learn2Crack Updates");
+                notification.setContentTitle("Notification title");
                 //Message in the Notification
                 notification.setContentText("New Post on Android Notification.");
                 //Alert shown when Notification is received
