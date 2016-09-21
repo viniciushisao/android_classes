@@ -8,8 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,10 +38,6 @@ public class MainActivity extends AppCompatActivity {
                 LayoutInflater inflater = getLayoutInflater();
                 View layout = inflater.inflate(R.layout.toast_layout,
                         (ViewGroup) findViewById(R.id.toast_layout_root));
-                ImageView image = (ImageView) layout.findViewById(R.id.image);
-                image.setImageResource(android.R.drawable.alert_dark_frame);
-                TextView text = (TextView) layout.findViewById(R.id.text);
-                text.setText("Hello! This is a custom toast!");
                 Toast toast = new Toast(getApplicationContext());
                 toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
                 toast.setDuration(Toast.LENGTH_LONG);
