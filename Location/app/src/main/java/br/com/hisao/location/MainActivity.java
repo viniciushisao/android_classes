@@ -3,14 +3,15 @@ package br.com.hisao.location;
 /**
  * Live template
  * Log.d(Log.LOG_TAG, "$CLASS$:$METHOD$:$LINE$ "$END$ );
- *
  */
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -30,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final TextView txvLocation = (TextView) findViewById(R.id.txv_location);
-
 
         final LocationListener mLocationListener = new LocationListener() {
             @Override
@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
 
         };
 
-        
 
         Button btnGetLocation = (Button) findViewById(R.id.btn_getlocation);
         btnGetLocation.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +78,19 @@ public class MainActivity extends AppCompatActivity {
                 }
                 mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, LOCATION_REFRESH_TIME,
                         LOCATION_REFRESH_DISTANCE, mLocationListener);
+            }
+        });
+
+        Button btnGoToSF = (Button) findViewById(R.id.btn_gotosf);
+        btnGoToSF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri gmmIntentUri = Uri.parse("geo:37.7749,-122.4194");
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                if (mapIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(mapIntent);
+                }
             }
         });
 

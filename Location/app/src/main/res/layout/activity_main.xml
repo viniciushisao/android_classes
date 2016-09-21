@@ -18,7 +18,16 @@
 
     <TextView
         android:id="@+id/txv_location"
-        android:textSize="30sp"
+        android:text="Your current location"
+        android:textSize="20sp"
+        android:layout_below="@id/btn_getlocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_below="@id/txv_location"
+        android:text="Go to SF"
+        android:id="@+id/btn_gotosf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
