@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.hisao.camera.MainActivity">
+
+    <Button
+        android:id="@+id/btn_takephoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Take photo"></Button>
+
+    <ImageView
+        android:id="@+id/imv_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_takephoto"></ImageView>
+
+
+</RelativeLayout>
