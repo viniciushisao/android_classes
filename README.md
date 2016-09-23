@@ -4,10 +4,6 @@ Command to get the repository is:
 ```
 git clone https://github.com/viniciushisao/android_classes.git
 ```
-.
-.
-.
-.
 . Lists. Threads
   * Dialog
   * ListViewAdapter
@@ -22,4 +18,6 @@ git clone https://github.com/viniciushisao/android_classes.git
  * Status Bar (also alarms)
  * Location
  * GoogleMaps (https://developers.google.com/maps/documentation/android-api/start)
-  
+. Storage
+ * Storage
+ * Camera  
