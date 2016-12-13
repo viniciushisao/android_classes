@@ -29,7 +29,6 @@ public class DownloadUtil {
                 return bitmap;
             }
         } catch (Exception e) {
-            urlConnection.disconnect();
             Log.w("ImageDownloader", "Error downloading image from " + url);
         } finally {
             if (urlConnection != null) {
