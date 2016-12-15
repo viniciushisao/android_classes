@@ -5,6 +5,10 @@ package br.com.hisao.location;
  * Log.d(Log.LOG_TAG, "$CLASS$:$METHOD$:$LINE$ "$END$ );
  */
 
+/**
+ * Created by viniciushisao
+ */
+
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -15,7 +19,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -40,22 +43,16 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onStatusChanged(String s, int i, Bundle bundle) {
-
-
             }
 
             @Override
             public void onProviderEnabled(String s) {
-
             }
 
             @Override
             public void onProviderDisabled(String s) {
-
             }
-
         };
-
 
         Button btnGetLocation = (Button) findViewById(R.id.btn_getlocation);
         btnGetLocation.setOnClickListener(new View.OnClickListener() {
@@ -65,16 +62,12 @@ public class MainActivity extends AppCompatActivity {
                 if (ActivityCompat.checkSelfPermission(MainActivity.this,
                         Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
                         ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    ActivityCompat#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for ActivityCompat#requestPermissions for more details.
-                    Log.d("MainActivity", "MainActivity:onClick:74 ");
+                    ActivityCompat.requestPermissions(MainActivity.this,
+                            new String[]{
+                                    Manifest.permission.ACCESS_COARSE_LOCATION,
+                                    Manifest.permission.ACCESS_FINE_LOCATION},
+                            0);
                     return;
-
                 }
                 mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, LOCATION_REFRESH_TIME,
                         LOCATION_REFRESH_DISTANCE, mLocationListener);
@@ -93,6 +86,5 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 }
