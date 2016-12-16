@@ -40,9 +40,9 @@ public class StorePrivate {
             }
         }
         catch (FileNotFoundException e) {
-            Log.e("login activity", "File not found: " + e.toString());
+            Log.e("StorePrivate", "File not found: " + e.toString());
         } catch (IOException e) {
-            Log.e("login activity", "Can not read file: " + e.toString());
+            Log.e("StorePrivate", "Can not read file: " + e.toString());
         }
 
         return ret;
@@ -55,7 +55,7 @@ public class StorePrivate {
             outputStreamWriter.close();
         }
         catch (IOException e) {
-            Log.e("Exception", "File write failed: " + e.toString());
+            Log.e("StorePrivate", "File write failed: " + e.toString());
         }
     }
 }

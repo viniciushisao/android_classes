@@ -21,10 +21,7 @@ import java.io.PrintWriter;
 
 public class StorePublic {
 
-    /** Method to check whether external media available and writable. This is adapted from
-     http://developer.android.com/guide/topics/data/data-storage.html#filesExternal */
-
-    public static void checkExternalMedia(){
+    public static void checkExternalMedia() {
         boolean mExternalStorageAvailable = false;
         boolean mExternalStorageWriteable = false;
         String state = Environment.getExternalStorageState();
@@ -40,28 +37,17 @@ public class StorePublic {
             // Can't read or write
             mExternalStorageAvailable = mExternalStorageWriteable = false;
         }
-        Log.d("Vinicius","\n\nExternal Media: readable="
-                +mExternalStorageAvailable+" writable="+mExternalStorageWriteable);
+        Log.d("StorePublic", "\n\nExternal Media: readable="
+                + mExternalStorageAvailable + " writable=" + mExternalStorageWriteable);
     }
-
-
-    /** Method to write ascii text characters to file on SD card. Note that you must add a
-     WRITE_EXTERNAL_STORAGE permission to the manifest file or this method will throw
-     a FileNotFound Exception because you won't have write permission. */
 
     private static final String DIRECTORY = "/download";
     private static final String FILE = "myfile.txt";
 
-    public static void writeToSDFile(String str){
-
-        // Find the root of the external storage.
-        // See http://developer.android.com/guide/topics/data/data-  storage.html#filesExternal
+    public static void writeToSDFile(String str) {
 
         File root = android.os.Environment.getExternalStorageDirectory();
-
-        // See http://stackoverflow.com/questions/3551821/android-write-to-sd-card-folder
-
-        File dir = new File (root.getAbsolutePath() + DIRECTORY);
+        File dir = new File(root.getAbsolutePath() + DIRECTORY);
         dir.mkdirs();
         File file = new File(dir, FILE);
 
@@ -74,27 +60,24 @@ public class StorePublic {
             f.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            Log.i("Vinicius", "******* File not found. Did you" +
+            Log.i("StorePublic", "******* File not found. Did you" +
                     " add a WRITE_EXTERNAL_STORAGE permission to the   manifest?");
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Log.d("Vinicius", "\n\nFile written to "+file);
+        Log.d("StorePublic", "\n\nFile written to " + file);
     }
 
 
-    /** Method to read in a text file placed in the res/raw directory of the application. The
-     method reads in all lines of the file sequentially. */
+    /**
+     * Method to read in a text file placed in the res/raw directory of the application. The
+     * method reads in all lines of the file sequentially.
+     */
 
-    public static String readRaw(Context context){
-//Find the directory for the SD Card using the API
-//*Don't* hardcode "/sdcard"
+    public static String readRaw(Context context) {
         File sdcard = Environment.getExternalStorageDirectory();
+        File file = new File(sdcard, DIRECTORY + "/" + FILE);
 
-//Get the text file
-        File file = new File(sdcard,DIRECTORY + "/" + FILE);
-
-//Read text from file
         StringBuilder text = new StringBuilder();
 
         try {
@@ -106,9 +89,8 @@ public class StorePublic {
                 text.append('\n');
             }
             br.close();
-        }
-        catch (IOException e) {
-            //You'll need to add proper error handling here
+        } catch (IOException e) {
+            Log.d("StorePublic", "Error" + e.getMessage());
         }
         return text.toString();
     }
