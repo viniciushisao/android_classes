@@ -17,7 +17,6 @@ import java.net.URL;
 
 public class JsonUtil {
 
-
     public static JSONArray getJson(String strUrl) {
         URL url;
         HttpURLConnection urlConnection;
