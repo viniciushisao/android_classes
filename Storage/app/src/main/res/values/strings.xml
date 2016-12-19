@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Storage</string>
+    <string name="title_activity_mysql_sample">MysqlSampleActivity</string>
 </resources>
