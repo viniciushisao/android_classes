@@ -4,14 +4,50 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+
     tools:context="br.com.hisao.mysqlitesample.MainActivity">
 
-    <TextView
+    <EditText
+        android:id="@+id/et_cpf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CPF" />
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_cpf"
+        android:hint="NOME" />
+
+    <Button
+        android:id="@+id/bt_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_below="@id/et_name"
+        android:text="Adicionar" />
+
+    <Button
+        android:id="@+id/btn_deletelast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_name"
+        android:layout_toRightOf="@id/bt_add"
+        android:text="DELETE LAST" />
+
+
+    <Button
+        android:id="@+id/btn_deleteall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_name"
+        android:layout_toRightOf="@id/btn_deletelast"
+        android:text="DELETE ALL" />
+
+    <TextView
+        android:id="@+id/tv_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bt_add" />
+
 </RelativeLayout>

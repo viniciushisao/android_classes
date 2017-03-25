@@ -7,6 +7,18 @@ package br.com.hisao.mysqlitesample.MySql;
 public class Person {
 
     private int id;
+    private String cpf;
+    private String name;
+
+
+    public Person(String cpf, String name) {
+        super();
+        this.cpf = cpf;
+        this.name = name;
+    }
+
+    public Person() {
+    }
 
     public int getId() {
         return id;
@@ -16,36 +28,25 @@ public class Person {
         this.id = id;
     }
 
-    public String getTitle() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setTitle(String cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
-    public String getAuthor() {
+    public String getName() {
         return name;
     }
 
-    public void setAuthor(String name) {
-        this.name = name;
-    }
-
-    private String cpf;
-    private String name;
-
-    public Person(){}
-
-    public Person(String cpf, String name) {
-        super();
-        this.cpf = cpf;
+    public void setName(String name) {
         this.name = name;
     }
 
     @Override
     public String toString() {
-        return "Book [id=" + id + ", cpf=" + cpf + ", name=" + name
+        return "[id=" + id + ", cpf=" + cpf + ", name=" + name
                 + "]";
     }
 }
