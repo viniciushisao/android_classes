@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RealmDb</string>
+    <string name="error_mandatory_fields">All fields are mandatory</string>
+    <string name="name">Name</string>
+    <string name="mobile">Mobile</string>
+    <string name="add">Add</string>
+    <string name="list">List</string>
+</resources>
