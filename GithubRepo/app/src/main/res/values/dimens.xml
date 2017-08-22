@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="warning_img">70dp</dimen>
+    <dimen name="margin_botton">20dp</dimen>
+    <dimen name="margin">20dp</dimen>
+    <dimen name="general_space">10dp</dimen>
+</resources>
